@@ -20,7 +20,7 @@ spec:
     syncOptions:
       - CreateNamespace=true
       - ApplyOutOfSyncOnly=true
-      - ServerSideApply=true
+      # - ServerSideApply=true  # Can't use with ignoreDifferences?
       - RespectIgnoreDifferences=true
   ignoreDifferences:
     - group: apps
