@@ -12,7 +12,7 @@ spec:
     chart: crossplane
   destination:
     namespace: crossplane-system
-    name: gke-autopilot
+    name: gke
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
