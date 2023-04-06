@@ -12,33 +12,11 @@ spec:
     repoURL: 'https://charts.crossplane.io/stable'
     targetRevision: 1.11.3
     chart: crossplane
-    helm:
-      parameters:
-        # Fix conflict with GKE autopilot settings resource quotas.
-        - name: resourcesCrossplane.limits.cpu
-          value: 'null'
-        - name: resourcesCrossplane.limits.memory
-          value: 'null'
-        - name: resourcesCrossplane.requests.cpu
-          value: 'null'
-        - name: resourcesCrossplane.requests.memory
-          value: 'null'
-        - name: resourcesRBACManager.limits.cpu
-          value: 'null'
-        - name: resourcesRBACManager.limits.memory
-          value: 'null'
-        - name: resourcesRBACManager.requests.cpu
-          value: 'null'
-        - name: resourcesRBACManager.requests.memory
-          value: 'null'
-        - name: xfn.resources.limits.cpu
-          value: 'null'
-        - name: xfn.resources.limits.memory
-          value: 'null'
-        - name: xfn.resources.requests.cpu
-          value: 'null'
-        - name: xfn.resources.requests.memory
-          value: 'null'
+  ignoreDifferences:
+  - group: apps
+    kind: Deployment
+    jsonPointers:
+    - /spec/containers[]/resources
   sources: []
   project: default
   syncPolicy:
