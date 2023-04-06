@@ -21,9 +21,10 @@ spec:
       - CreateNamespace=true
       - ApplyOutOfSyncOnly=true
       - ServerSideApply=true
-  #     - RespectIgnoreDifferences=true
-  # ignoreDifferences:
-  #   - group: apps
-  #     kind: Deployment
-  #     jsonPointers:
-  #       - '.spec.template.spec.containers[]?.resources'
+      - RespectIgnoreDifferences=true
+  ignoreDifferences:
+    - group: apps
+      kind: Deployment
+      jsonPointers:
+        # - '.spec.template.spec.containers[]?.resources'
+        - '.spec.template.spec.initContainers[]?.env[]?.valueFrom.resourceFieldRef.divisor'
