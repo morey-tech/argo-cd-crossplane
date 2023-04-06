@@ -5,25 +5,22 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  destination:
-    name: 'gke-autopilot'
-    namespace: crossplane-system
+  project: default
   source:
     repoURL: 'https://charts.crossplane.io/stable'
     targetRevision: 1.11.3
     chart: crossplane
-  ignoreDifferences:
-  - group: apps
-    kind: Deployment
-    jsonPointers:
-    - /spec/containers[]/resources
-  sources: []
-  project: default
+  destination:
+    namespace: crossplane-system
+    name: gke-autopilot
   syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
     syncOptions:
       - CreateNamespace=true
       - ApplyOutOfSyncOnly=true
       - ServerSideApply=true
+  #     - RespectIgnoreDifferences=true
+  # ignoreDifferences:
+  #   - group: apps
+  #     kind: Deployment
+  #     jsonPointers:
+  #       - '.spec.template.spec.containers[]?.resources'
