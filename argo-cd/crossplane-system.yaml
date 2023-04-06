@@ -14,6 +14,9 @@ spec:
     namespace: crossplane-system
     name: gke
   syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
     syncOptions:
       - CreateNamespace=true
       - ApplyOutOfSyncOnly=true
