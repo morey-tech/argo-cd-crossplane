@@ -22,8 +22,7 @@ spec:
       - ApplyOutOfSyncOnly=true
       - RespectIgnoreDifferences=true
   ignoreDifferences:
-    - group: v1
-      kind: Secret
+    - kind: Secret
       name: gcp-secret
       jsonPointers:
         - '.data'
