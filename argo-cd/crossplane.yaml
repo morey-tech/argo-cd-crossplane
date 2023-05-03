@@ -19,6 +19,8 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
+      - ApplyOutOfSyncOnly=true
+      - RespectIgnoreDifferences=true
   ignoreDifferences:
     - group: v1
       kind: Secret
