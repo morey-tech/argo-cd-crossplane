@@ -1,0 +1,14 @@
+apiVersion: storage.gcp.upbound.io/v1beta1
+kind: Bucket
+metadata:
+  name: akuity-nicholas-morey-argo-cd-crossplane
+  labels:
+  annotations:
+    crossplane.io/external-name: akuity-nicholas-morey-argo-cd-crossplane
+spec:
+  forProvider:
+    location: US
+    storageClass: MULTI_REGIONAL
+  providerConfigRef:
+    name: default
+  deletionPolicy: Delete
