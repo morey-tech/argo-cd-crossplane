@@ -1,7 +1,7 @@
 apiVersion: storage.gcp.upbound.io/v1beta1
 kind: Bucket
 metadata:
-  name: akuity-nicholas-morey-argo-cd-crossplane
+  name: guestbook-ui
   labels:
   annotations:
     crossplane.io/external-name: akuity-nicholas-morey-argo-cd-crossplane
