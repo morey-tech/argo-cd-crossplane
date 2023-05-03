@@ -25,4 +25,4 @@ spec:
     - kind: Secret
       name: gcp-secret
       jsonPointers:
-        - '.data'
+        - '.data.creds'
